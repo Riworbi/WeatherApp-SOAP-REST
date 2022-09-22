@@ -1,0 +1,14 @@
+config:
+ URL: https://api.openweathermap.org/data/2.5/weather?
+ KeyAPI: ebe9d8b6a648e4e4887101d3feeb435d
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:mydb
+    username: sa
+    password: password
+    driverClassName: org.h2.Driver
+  jpa:
+    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true
+    
