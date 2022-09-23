@@ -6,14 +6,12 @@ import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
-import com.example.demo.WeatherOperationResponse;
 import com.example.demo.WeatherOperation;
+import com.example.demo.WeatherOperationFault_Exception;
+import com.example.demo.WeatherOperationResponse;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 
-import lombok.extern.slf4j.Slf4j;
-
-@Slf4j
 @Endpoint
 public class WeatherEndPoint {
 
@@ -29,7 +27,8 @@ public class WeatherEndPoint {
 
 	@PayloadRoot(namespace = NAMESPACE, localPart = "WeatherOperation")
 	@ResponsePayload
-	public WeatherOperationResponse WeatherOperation(@RequestPayload WeatherOperation request) throws JsonMappingException, JsonProcessingException {
+	public WeatherOperationResponse WeatherOperation(@RequestPayload WeatherOperation request)
+			throws JsonMappingException, JsonProcessingException, WeatherOperationFault_Exception {
 		return weatherServiceSOAP.checkWeatherOperation(request);
 	}
 }

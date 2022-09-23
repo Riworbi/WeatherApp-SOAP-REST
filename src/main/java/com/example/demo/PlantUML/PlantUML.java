@@ -29,7 +29,7 @@ package com.example.demo.PlantUML;
 //
 //service --> soapWS : ok : List<City>
 //
-//loop 
+//loop for service.findall()
 //
 //soapWS -> service : service.findall()
 //service --> soapWS : List<City>

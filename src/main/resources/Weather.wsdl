@@ -18,6 +18,15 @@
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
+      <xsd:element name="WeatherOperationFault">
+      	<xsd:complexType>
+      		<xsd:sequence>
+      			<xsd:element name="WeatherOperationFault"
+      				type="xsd:string">
+      			</xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="WeatherOperationRequest">
@@ -26,11 +35,15 @@
   <wsdl:message name="WeatherOperationResponse">
     <wsdl:part element="tns:WeatherOperationResponse" name="parameters"/>
   </wsdl:message>
+  <wsdl:message name="WeatherOperationFault">
+  	<wsdl:part name="parameters" element="tns:WeatherOperationFault"></wsdl:part>
+  </wsdl:message>
   <wsdl:portType name="Weather">
     <wsdl:operation name="WeatherOperation">
       <wsdl:input message="tns:WeatherOperationRequest"/>
       <wsdl:output message="tns:WeatherOperationResponse"/>
-    </wsdl:operation>
+            <wsdl:fault name="fault" message="tns:WeatherOperationFault"></wsdl:fault>
+        </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WeatherSOAP" type="tns:Weather">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
