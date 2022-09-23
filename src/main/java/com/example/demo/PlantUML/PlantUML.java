@@ -1,3 +1,4 @@
+package com.example.demo.PlantUML;
 //
 //@startuml
 //actor Actor as actor
@@ -23,11 +24,15 @@
 //service -> CityRepository : findall() : List<City>
 //activate CityRepository
 //
-//CityRepository --> service : ok
+//CityRepository --> service : ok : List<City>
 //deactivate CityRepository
 //
-//service --> soapWS : ok
+//service --> soapWS : ok : List<City>
 //
+//loop 
+//
+//soapWS -> service : service.findall()
+//service --> soapWS : List<City>
 //
 //alt  if city and request same id and name - sucess
 //
@@ -49,6 +54,11 @@
 //deactivate soapWS
 //
 //end
+//
+//
+//
+//end
+//
 //
 //soapWSendpoint --> soapWSconfig : WeatherOperationResponse  : SoapResponse
 //deactivate soapWSendpoint
