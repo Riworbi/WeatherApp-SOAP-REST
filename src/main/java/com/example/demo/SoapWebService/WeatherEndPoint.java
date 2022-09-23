@@ -1,4 +1,4 @@
-package com.example.demo.producingwebservice;
+package com.example.demo.SoapWebService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;

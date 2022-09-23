@@ -1,4 +1,4 @@
-package com.example.demo.producingwebservice;
+package com.example.demo.SoapWebService;
 
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.ApplicationContext;
