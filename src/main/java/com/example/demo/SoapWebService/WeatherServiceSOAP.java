@@ -37,11 +37,10 @@ public class WeatherServiceSOAP {
 			} else if ((!miasto.getName().equals(request.getMiasto()))
 					&& (miasto.getId() == request.getCorrelationID())) {
 				throw new WeatherOperationFault_Exception("Invalid city!", new WeatherOperationFault());
-			} else {
-				throw new WeatherOperationFault_Exception("Invalid city and id!", new WeatherOperationFault());
-			}
+			} 
 		}
-		return weatherOperationResponse;
+		
+		throw new WeatherOperationFault_Exception("Invalid data!", new WeatherOperationFault());
 	}
 
 }
